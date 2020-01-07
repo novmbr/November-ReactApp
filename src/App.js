@@ -1,26 +1,60 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
+import "./App.css";
+import Query from "./components/query";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import Switch from "react-switch";
+
+class App extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      darkMode: false
+    };
+
+    this.handleDarkModeSwitch = this.handleDarkModeSwitch.bind(this);
+  }
+
+  handleDarkModeSwitch(darkMode) {
+    this.setState({ darkMode });
+  }
+
+  render() {
+    return (
+      <div className={this.getAppClasses()}>
+        <header className="App-header">
+          <div className="darkMode-box">
+            <span className="credits">Dark Mode: </span>
+            <Switch
+              onChange={this.handleDarkModeSwitch}
+              checked={this.state.darkMode}
+              onColor="#86d3ff"
+              onHandleColor="#0d0d0d"
+              handleDiameter={15}
+              uncheckedIcon={false}
+              checkedIcon={false}
+              boxShadow="0px 1px 5px rgba(0, 0, 0, 0.6)"
+              activeBoxShadow="0px 0px 1px 10px rgba(0, 0, 0, 0.2)"
+              height={10}
+              width={24}
+            />
+          </div>
+          <h1 className="title">November</h1>
+          <p className="subtitle">AI to change the world. Try it out!</p>
+
+          <Query />
+
+          <p className="credits">
+            Made by <a href="https://ismaeelakram.com">Ismaeel Akram</a>.
+          </p>
+        </header>
+      </div>
+    );
+  }
+
+  getAppClasses() {
+    return this.state.darkMode === true ? "App dark" : "App";
+  }
 }
 
 export default App;
