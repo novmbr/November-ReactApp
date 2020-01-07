@@ -1,6 +1,6 @@
 .App {
   text-align: center;
-  transition: all 0.1s linear;
+  transition: all 0.2s linear;
 }
 .dark {
   background-color: #000;
@@ -17,14 +17,14 @@
 }
 
 .title {
-  font-size: 44px;
+  font-size: 64px;
 }
 
 .subtitle {
-  font-size: 14px;
+  font-size: 25px;
 }
 
 .credits {
-  font-size: 12px;
-  margin-top: 5px;
+  font-size: 15px;
+  margin-top: 20px;
 }
