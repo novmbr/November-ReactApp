@@ -40,7 +40,7 @@ class App extends Component {
             />
           </div>
           <h1 className="title">November</h1>
-          <p className="subtitle">AI to change the world. Try it out!</p>
+          <p className="subtitle">AI to craft our world. Try it out!</p>
 
           <Query />
 
